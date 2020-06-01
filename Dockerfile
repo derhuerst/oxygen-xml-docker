@@ -15,10 +15,16 @@ RUN apt update && apt install -y libfreetype6
 ADD automate-install.txt ./
 RUN sh install.sh <automate-install.txt
 
-FROM alpine
+# we need glibc, so alpine does not work :(
+FROM ubuntu
 
 # copy installation
-COPY --from=builder /usr/local/oxygen /usr/local/oxygen
+WORKDIR /usr/local/oxygen
+COPY --from=builder /usr/local/oxygen ./
 
-ENV PATH="/usr/local/oxygen:/usr/local/oxygen/jre/bin:${PATH}"
-ENTRYPOINT [[ -z "${AGREE_TOS}" ]] &&
+# we include jre/bin to allow for `java some-file.jar` overrides
+ENV PATH="/usr/local/oxygen/jre/bin:/usr/local/oxygen:${PATH}"
+COPY entrypoint.sh ./
+
+ENTRYPOINT ["entrypoint.sh"]
+CMD ["ls -l *.sh"]
