@@ -1,4 +1,4 @@
-FROM ubuntu as builder
+FROM ubuntu:20.04 as builder
 WORKDIR /root
 
 # download installer
@@ -16,7 +16,7 @@ ADD automate-install.txt ./
 RUN sh install.sh <automate-install.txt
 
 # we need glibc, so alpine does not work :(
-FROM ubuntu
+FROM ubuntu:20.04
 
 # copy installation
 WORKDIR /usr/local/oxygen
