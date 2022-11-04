@@ -1,4 +1,4 @@
-FROM ubuntu:20.04 as builder
+FROM ubuntu:22.04 as builder
 WORKDIR /root
 
 # download installer
@@ -16,7 +16,7 @@ ADD automate-install.txt ./
 RUN sh install.sh <automate-install.txt
 
 # we need glibc, so alpine does not work :(
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 LABEL org.opencontainers.image.title="oxygen-xml"
 LABEL org.opencontainers.image.description="Oxygen XML scripting API"
 LABEL org.opencontainers.image.authors="Jannis R <mail@jannisr.de>"
