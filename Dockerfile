@@ -22,6 +22,7 @@ LABEL org.opencontainers.image.description="Oxygen XML scripting API"
 LABEL org.opencontainers.image.authors="Jannis R <mail@jannisr.de>"
 LABEL org.opencontainers.image.documentation="https://github.com/derhuerst/oxygen-xml-docker/tree/1.0.0"
 LABEL org.opencontainers.image.source="https://github.com/derhuerst/oxygen-xml-docker"
+LABEL org.opencontainers.image.revision="1.0.0"
 
 # copy installation
 WORKDIR /usr/local/oxygen

@@ -13,7 +13,7 @@
 docker run \
 	-e AGREE_EULA=true \ # agree to EULA
 	-it \ # interactive terminal session
-	derhuerst/oxygen-xml \
+	derhuerst/oxygen-xml:1.0.0 \
 	<oxygen-script-here>
 ```
 
@@ -27,6 +27,6 @@ ls xsd/**.xsd
 docker run \
 	-e AGREE_EULA=true -it \
 	-v xsd:/data/xsd \ # mount xsd directory at /data/xsd
-	derhuerst/oxygen-xml \
+	derhuerst/oxygen-xml:1.0.0 \
 	flattenSchema.sh -in:/data/xsd/schema.xsd -outDir:/data -verbose
 ```
