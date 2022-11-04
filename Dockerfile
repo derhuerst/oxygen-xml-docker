@@ -17,6 +17,11 @@ RUN sh install.sh <automate-install.txt
 
 # we need glibc, so alpine does not work :(
 FROM ubuntu:20.04
+LABEL org.opencontainers.image.title="oxygen-xml"
+LABEL org.opencontainers.image.description="Oxygen XML scripting API"
+LABEL org.opencontainers.image.authors="Jannis R <mail@jannisr.de>"
+LABEL org.opencontainers.image.documentation="https://github.com/derhuerst/oxygen-xml-docker/tree/1.0.0"
+LABEL org.opencontainers.image.source="https://github.com/derhuerst/oxygen-xml-docker"
 
 # copy installation
 WORKDIR /usr/local/oxygen

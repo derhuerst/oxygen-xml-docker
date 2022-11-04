@@ -2,6 +2,9 @@
 
 **Docker image for the [Oxygen XML scripting API](https://www.oxygenxml.com/oxygen_scripting.html).**
 
+[![support me via GitHub Sponsors](https://img.shields.io/badge/support%20me-donate-fa7664.svg)](https://github.com/sponsors/derhuerst)
+[![chat with me on Twitter](https://img.shields.io/badge/chat%20with%20me-on%20Twitter-1da1f2.svg)](https://twitter.com/derhuerst)
+
 ## Usage
 
 *Note:* By using this Docker image, you agree to the EULA. You can view it by running `docker run --entrypoint /bin/cat derhuerst/oxygen-xml EULA_OxygenXML_Editor.txt`.
